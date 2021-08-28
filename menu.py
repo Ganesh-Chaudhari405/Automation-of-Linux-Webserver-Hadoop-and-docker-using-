@@ -20,10 +20,6 @@ def main():
              break
          elif inp in "configure httpd server" or inp in "configure apache server":
              web(inp)
-         elif inp in "install docker":
-             dock(inp)
-         elif inp in "create partition":
-             part(inp)
          else: 
              print("Enter proper requirement")
              
@@ -147,13 +143,7 @@ def bigdata(inp):
 
 
 
-def dock(inp):
-    
-    ip=input("Enter ip address")
-    if inp in "install docker" or inp in "docker":
-        os.system("scp /etc/yum.repos.d/doc.repo {}:/etc/yum.repos.d/".format(ip))
-        os.system("ssh {} yum install docker-ce --nobest".format(ip))
-        os.system("ssh {} systemctl start docker".format(ip))
+
 
 
 
